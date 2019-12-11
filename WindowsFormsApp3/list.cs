@@ -36,6 +36,7 @@ namespace Mediapfunctions
             Next = null;
             Prev = null;
         }
+    }
         class DoubleLinkedList<T>
         {
             Node<T> head;
@@ -165,5 +166,5 @@ namespace Mediapfunctions
                 }
             }
         }
-    }
+    
 }

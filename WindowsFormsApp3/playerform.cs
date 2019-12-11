@@ -28,7 +28,7 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
-      
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -37,21 +37,21 @@ namespace WindowsFormsApp3
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Mp3 Files|*.mp3";
-            
+
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string FileName = openFileDialog1.FileName;
                 outputDevice = new WaveOutEvent();
                 audioFile = new AudioFileReader(FileName);
-            }  
+            }
 
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (PlayButtonClicked==false)
+            if (PlayButtonClicked == false)
             {
                 outputDevice.Init(audioFile);
                 outputDevice.Play();
@@ -67,14 +67,15 @@ namespace WindowsFormsApp3
         private void rewind_Click(object sender, EventArgs e)
         {
 
-            
+
             outputDevice.Stop();
-           audioFile.Position=0;
+            audioFile.Position = 0;
 
             outputDevice.Init(audioFile);
             outputDevice.Play();
-            
+
 
         }
+
     }
 }
