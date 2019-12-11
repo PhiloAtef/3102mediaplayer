@@ -62,10 +62,19 @@ namespace WindowsFormsApp3
                 outputDevice?.Stop();
                 PlayButtonClicked = false;
             }
+        }
+
+        private void rewind_Click(object sender, EventArgs e)
+        {
+
             
+            outputDevice.Stop();
+           audioFile.Position=0;
+
+            outputDevice.Init(audioFile);
+            outputDevice.Play();
             
-            
-            
+
         }
     }
 }
