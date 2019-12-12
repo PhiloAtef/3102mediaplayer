@@ -129,8 +129,25 @@ namespace WindowsFormsApp3
             
         }
 
+
         #endregion
 
+        #region rewindback15sec
+        private void skipback10_Click(object sender, EventArgs e)
+        {
+            outputDevice.Stop(); //stops playing
+            audioFile.CurrentTime = audioFile.CurrentTime.Subtract(TimeSpan.FromSeconds(15));//subtracts 15 seconds from current time to rewind back 15 seconds
+            outputDevice.Play(); //plays audio
+        }
+        #endregion
 
+        #region skipahead15sec
+        private void skipahead10_Click(object sender, EventArgs e)
+        {
+            outputDevice.Stop(); //stops playing
+            audioFile.CurrentTime = audioFile.CurrentTime.Add(TimeSpan.FromSeconds(15));//adds 15 seconds from current time to skip ahead 15 seconds
+            outputDevice.Play(); //plays audio
+        }
+        #endregion
     }
 }

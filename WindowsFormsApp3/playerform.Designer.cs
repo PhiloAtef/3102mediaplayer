@@ -262,7 +262,7 @@
             this.rewind.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.rewind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rewind.Image = ((System.Drawing.Image)(resources.GetObject("rewind.Image")));
-            this.rewind.Location = new System.Drawing.Point(61, 422);
+            this.rewind.Location = new System.Drawing.Point(61, 326);
             this.rewind.Name = "rewind";
             this.rewind.Size = new System.Drawing.Size(75, 73);
             this.rewind.TabIndex = 3;
@@ -279,11 +279,12 @@
             this.skipback10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.skipback10.ForeColor = System.Drawing.Color.Black;
             this.skipback10.Image = ((System.Drawing.Image)(resources.GetObject("skipback10.Image")));
-            this.skipback10.Location = new System.Drawing.Point(61, 326);
+            this.skipback10.Location = new System.Drawing.Point(61, 429);
             this.skipback10.Name = "skipback10";
             this.skipback10.Size = new System.Drawing.Size(75, 66);
             this.skipback10.TabIndex = 4;
             this.skipback10.UseVisualStyleBackColor = false;
+            this.skipback10.Click += new System.EventHandler(this.skipback10_Click);
             // 
             // skipahead10
             // 
@@ -294,11 +295,12 @@
             this.skipahead10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.skipahead10.ForeColor = System.Drawing.Color.Black;
             this.skipahead10.Image = ((System.Drawing.Image)(resources.GetObject("skipahead10.Image")));
-            this.skipahead10.Location = new System.Drawing.Point(281, 326);
+            this.skipahead10.Location = new System.Drawing.Point(281, 429);
             this.skipahead10.Name = "skipahead10";
             this.skipahead10.Size = new System.Drawing.Size(75, 66);
             this.skipahead10.TabIndex = 5;
             this.skipahead10.UseVisualStyleBackColor = false;
+            this.skipahead10.Click += new System.EventHandler(this.skipahead10_Click);
             // 
             // mediaform
             // 
