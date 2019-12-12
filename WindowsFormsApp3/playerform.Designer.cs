@@ -51,8 +51,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.play = new System.Windows.Forms.Button();
             this.rewind = new System.Windows.Forms.Button();
+            this.skipback10 = new System.Windows.Forms.Button();
+            this.skipahead10 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -178,30 +180,30 @@
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(121, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // menuStrip1
@@ -217,7 +219,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(410, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.UseWaitCursor = true;
             // 
             // openFileDialog1
             // 
@@ -226,38 +227,80 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox1.Location = new System.Drawing.Point(61, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(295, 224);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
             // 
-            // button1
+            // play
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.sssss;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(161, 324);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 66);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.UseWaitCursor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.play.AutoSize = true;
+            this.play.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.play.BackColor = System.Drawing.Color.Transparent;
+            this.play.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.play.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.play.FlatAppearance.BorderSize = 0;
+            this.play.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.play.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.play.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.play.ForeColor = System.Drawing.Color.Black;
+            this.play.Image = ((System.Drawing.Image)(resources.GetObject("play.Image")));
+            this.play.Location = new System.Drawing.Point(176, 326);
+            this.play.Name = "play";
+            this.play.Size = new System.Drawing.Size(70, 70);
+            this.play.TabIndex = 2;
+            this.play.UseVisualStyleBackColor = false;
+            this.play.Click += new System.EventHandler(this.button1_Click);
             // 
             // rewind
             // 
-            this.rewind.Location = new System.Drawing.Point(80, 324);
+            this.rewind.BackColor = System.Drawing.Color.Transparent;
+            this.rewind.FlatAppearance.BorderSize = 0;
+            this.rewind.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.rewind.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rewind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rewind.Image = ((System.Drawing.Image)(resources.GetObject("rewind.Image")));
+            this.rewind.Location = new System.Drawing.Point(61, 326);
             this.rewind.Name = "rewind";
-            this.rewind.Size = new System.Drawing.Size(75, 66);
+            this.rewind.Size = new System.Drawing.Size(75, 73);
             this.rewind.TabIndex = 3;
-            this.rewind.Text = "rewind";
-            this.rewind.UseVisualStyleBackColor = true;
+            this.rewind.UseVisualStyleBackColor = false;
             this.rewind.Click += new System.EventHandler(this.rewind_Click);
+            // 
+            // skipback10
+            // 
+            this.skipback10.BackColor = System.Drawing.Color.Transparent;
+            this.skipback10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.skipback10.FlatAppearance.BorderSize = 0;
+            this.skipback10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.skipback10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.skipback10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.skipback10.ForeColor = System.Drawing.Color.Black;
+            this.skipback10.Image = ((System.Drawing.Image)(resources.GetObject("skipback10.Image")));
+            this.skipback10.Location = new System.Drawing.Point(61, 429);
+            this.skipback10.Name = "skipback10";
+            this.skipback10.Size = new System.Drawing.Size(75, 66);
+            this.skipback10.TabIndex = 4;
+            this.skipback10.UseVisualStyleBackColor = false;
+            this.skipback10.Click += new System.EventHandler(this.skipback10_Click);
+            // 
+            // skipahead10
+            // 
+            this.skipahead10.BackColor = System.Drawing.Color.Transparent;
+            this.skipahead10.FlatAppearance.BorderSize = 0;
+            this.skipahead10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.skipahead10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.skipahead10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.skipahead10.ForeColor = System.Drawing.Color.Black;
+            this.skipahead10.Image = ((System.Drawing.Image)(resources.GetObject("skipahead10.Image")));
+            this.skipahead10.Location = new System.Drawing.Point(281, 429);
+            this.skipahead10.Name = "skipahead10";
+            this.skipahead10.Size = new System.Drawing.Size(75, 66);
+            this.skipahead10.TabIndex = 5;
+            this.skipahead10.UseVisualStyleBackColor = false;
+            this.skipahead10.Click += new System.EventHandler(this.skipahead10_Click);
             // 
             // mediaform
             // 
@@ -265,9 +308,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp3.Properties.Resources.S4LwVn;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(410, 451);
+            this.ClientSize = new System.Drawing.Size(410, 545);
+            this.Controls.Add(this.skipahead10);
+            this.Controls.Add(this.skipback10);
             this.Controls.Add(this.rewind);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.play);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -308,8 +353,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button play;
         private System.Windows.Forms.Button rewind;
+        private System.Windows.Forms.Button skipback10;
+        private System.Windows.Forms.Button skipahead10;
     }
 }
 
