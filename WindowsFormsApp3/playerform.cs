@@ -280,6 +280,15 @@ namespace WindowsFormsApp3
         }
         #endregion
 
+        private void openMp4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mp4Form mp4 = new mp4Form();
+            
+            
+            mp4.Show();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             openFileDialog1.Multiselect = true; //for selecting multiple files

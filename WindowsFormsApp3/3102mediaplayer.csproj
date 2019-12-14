@@ -50,13 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="list.cs" />
+    <Compile Include="mp4Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="mp4Form.Designer.cs">
+      <DependentUpon>mp4Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="list.cs" />
     <Compile Include="playerform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,9 +65,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="playerform.resx">
       <DependentUpon>playerform.cs</DependentUpon>
     </EmbeddedResource>

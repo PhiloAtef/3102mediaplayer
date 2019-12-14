@@ -66,6 +66,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.openMp4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.volumebar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.songtrack)).BeginInit();
@@ -75,6 +76,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
+            this.openMp4ToolStripMenuItem,
             this.toolStripSeparator,
             this.saveToolStripMenuItem,
             this.toolStripSeparator1,
@@ -93,7 +95,7 @@
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Text = "&Open mp3";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // toolStripSeparator
@@ -449,6 +451,13 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // openMp4ToolStripMenuItem
+            // 
+            this.openMp4ToolStripMenuItem.Name = "openMp4ToolStripMenuItem";
+            this.openMp4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openMp4ToolStripMenuItem.Text = "&Open mp4";
+            this.openMp4ToolStripMenuItem.Click += new System.EventHandler(this.openMp4ToolStripMenuItem_Click);
+            // 
             // mediaform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,6 +534,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem openMp4ToolStripMenuItem;
     }
 }
 
