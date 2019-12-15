@@ -31,7 +31,7 @@ namespace WindowsFormsApp3
         public bool MuteButtonClicked = false;
 
         //fields for playlist
-        string[] files, paths;
+        public string[] files, paths;
        
 
         #endregion
@@ -63,13 +63,12 @@ namespace WindowsFormsApp3
             
                 //Openfiledialoguecode
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    //retreiving path of mp3 file to FileName
-                    string FileName = openFileDialog1.FileName;
-                    //initializing a output device of type waveoutevent
-                    outputDevice = new WaveOutEvent();
-                    //initializing an object of audiofile of type audiofilereader the refrences the path of the mp3 file
-                    audioFile = new AudioFileReader(FileName);
+                {          
+                
+                    string FileName = openFileDialog1.FileName;  //retreiving path of mp3 file to FileName                                                                 
+                    outputDevice = new WaveOutEvent(); //initializing a output device of type waveoutevent                                        
+                    audioFile = new AudioFileReader(FileName); //initializing an object of audiofile of type audiofilereader the refrences the path of the mp3 file
+
                 }                        
         }
 
@@ -223,6 +222,52 @@ namespace WindowsFormsApp3
 
         #endregion
 
+        #region Exit Button
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to exit?!! ", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    outputDevice.Dispose(); //disposes of resources taken by Naudio library
+                    audioFile.Dispose(); //disposes of resources taken by Naudio library
+                }
+                catch (NullReferenceException)
+                {
+
+                }
+
+                Close(); //closes form
+            }
+        }
+
+        #endregion
+
+        #region skip back
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region skip ahead
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region goto mp4form
+        private void openMp4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mp4Form mp4 = new mp4Form();
+            mp4.Show();
+        }
+        #endregion
+
         #region playlist
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) //event when selecting from the list box
         {
@@ -240,9 +285,17 @@ namespace WindowsFormsApp3
             else
             {
                 outputDevice.Dispose();
-                string filename = paths[listBox1.SelectedIndex]; //take the selected index and pass it to the array to pick out the path to the file we want to play
-                outputDevice = new WaveOutEvent(); //initializing a output device of type waveoutevent
+                try
+                {
+                    string filename = paths[listBox1.SelectedIndex]; //take the selected index and pass it to the array to pick out the path to the file we want to play
+                    outputDevice = new WaveOutEvent(); //initializing a output device of type waveoutevent
                 audioFile = new AudioFileReader(filename); //initializing an object of audiofile of type audiofilereader the refrences the path of the mp3 file
+                }
+                catch (System.IndexOutOfRangeException)
+                {
+                    
+                }
+                
                 outputDevice.Init(audioFile); //loads the audiofile to the sound card
                 songtrack.Maximum = (int)audioFile.TotalTime.TotalSeconds; //makes the scale of the trackbar the same length as the 
                 songtrack.Value = 0; // makes the pointer's initial value = 0
@@ -250,45 +303,7 @@ namespace WindowsFormsApp3
                 timer1.Start(); //starts the timer for the pointer to start with the song
             }
         }
-
-        #region Exit Button
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Do you want to exit?!! ", "Exit", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                outputDevice.Dispose(); //disposes of resources taken by Naudio library
-                audioFile.Dispose(); //disposes of resources taken by Naudio library
-                Close(); //closes form
-            }
-        }
-
-        #endregion
-
-        #region skip back
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        #endregion
-
-        #region skip ahead
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
-
-        private void openMp4ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            mp4Form mp4 = new mp4Form();
-            
-            
-            mp4.Show();
-        }
-
+        
         private void button4_Click(object sender, EventArgs e)
         {
             openFileDialog1.Multiselect = true; //for selecting multiple files

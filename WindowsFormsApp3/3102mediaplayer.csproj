@@ -65,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="mp4Form.resx">
+      <DependentUpon>mp4Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="playerform.resx">
       <DependentUpon>playerform.cs</DependentUpon>
     </EmbeddedResource>
